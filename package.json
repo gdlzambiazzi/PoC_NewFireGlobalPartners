@@ -1,0 +1,32 @@
+{
+  "name": "cypress_e2e",
+  "version": "1.0.0",
+  "description": "Poc Task for New Fire Global Partners",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "co": "cypress open",
+    "cr": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdlzambiazzi/PoC_NewFireGlobalPartners.git"
+  },
+  "keywords": [
+    "cypress",
+    "javascript",
+    "e2e",
+    "newFire",
+    "PoC"
+  ],
+  "author": "gdlzambiazzi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gdlzambiazzi/PoC_NewFireGlobalPartners/issues"
+  },
+  "homepage": "https://github.com/gdlzambiazzi/PoC_NewFireGlobalPartners#readme",
+  "devDependencies": {
+    "cypress": "^12.13.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  }
+}
