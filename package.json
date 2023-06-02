@@ -28,5 +28,15 @@
   "devDependencies": {
     "cypress": "^12.13.0",
     "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "step_definitions",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "reports",
+      "filePrefix": "",
+      "fileSuffix": ""
+    }
   }
 }
