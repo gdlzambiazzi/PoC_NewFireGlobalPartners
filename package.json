@@ -31,10 +31,10 @@
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
-    "stepDefinitions": "step_definitions",
+    "stepDefinitions": "cypress/step_definitions",
     "cucumberJson": {
       "generate": true,
-      "outputFolder": "reports",
+      "outputFolder": "cypress/reports",
       "filePrefix": "",
       "fileSuffix": ""
     }

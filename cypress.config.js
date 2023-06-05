@@ -7,6 +7,10 @@ module.exports = defineConfig({
       // implement node event listeners here
       on('file:preprocessor', cucumber())
     },
-  specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx,feature}"
+    specPattern: "cypress/integration/**/*.{js,jsx,ts,tsx,feature}",
+    env: {
+      TAGS: "not @ignore"
+    },
+    hideXHRInCommandLog: true
   },
 });
