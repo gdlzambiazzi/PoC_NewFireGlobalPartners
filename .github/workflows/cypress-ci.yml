@@ -7,8 +7,11 @@ on:
     branches: [ "main" ]
 
 jobs:
-  cypressJob:
+  build:
     runs-on: ubuntu-22.04
+    defaults:
+       run:
+         working-directory: ./cypress
     strategy:
       matrix:
         node-version: [18.x]
@@ -19,10 +22,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: './cypress/package-lock.json'
     - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: './cypress/package-lock.json'
     - name: Install dependencies
       run: npm install
       working-directory: cypress
