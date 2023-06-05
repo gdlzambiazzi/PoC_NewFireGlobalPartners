@@ -33,5 +33,11 @@ if (Cypress.config("hideXHRInCommandLog")) {
     }
   }
 
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // returning false here prevents Cypress from
+  // failing the tests when getting 500's on various requests
+return false
+})
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
