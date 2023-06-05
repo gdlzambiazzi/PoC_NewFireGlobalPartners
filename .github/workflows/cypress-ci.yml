@@ -2,31 +2,24 @@ name: Cypress-CI Pipeline
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
-#on:
-#  workflow_dispatch:
-    # Inputs the workflow accepts.
-#    inputs:
-#      name:
-        # Friendly description to be shown in the UI instead of 'name'
-#        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-#        default: 'World'
-        # Input has to be provided for the workflow to run
-#        required: true
-        # The data type of the input
-#        type: string
+on:
+  push:
+    paths:
+      - 'cypress/**'
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
   cypressJob:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: npm install
+    #- uses: cypress/
+    - name: Install dependencies
       run: npm install
+      working-directory: cypress
 
     - name: Run Cypress
       run: npm run cr
+      working-directory: cypress
