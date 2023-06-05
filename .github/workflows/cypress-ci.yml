@@ -1,20 +1,28 @@
 name: Cypress-CI Pipeline
 
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
-#on: push
-#    paths:
-#      - 'cypress/**'
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  # This workflow contains a single job called "greet"
   cypressJob:
-    # The type of runner that the job will run on
     runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: [18.x]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    #- uses: cypress/
+    - uses: actions/checkout@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
     - name: Install dependencies
       run: npm install
       working-directory: cypress
