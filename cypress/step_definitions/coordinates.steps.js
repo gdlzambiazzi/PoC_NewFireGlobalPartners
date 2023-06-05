@@ -8,14 +8,6 @@ Given('I visit Latong website', () => {
   placeCoordinates.assertLatLongLoaded();
 });
 
-/* When('I look for a place', (table) => {
-  table.hashes().forEach(row => {
-    cy.log(row.place);
-    placeCoordinates.typePlaceName(row.place);
-    placeCoordinates.clickFindButton();
-  });
-}); */
-
 When('I look for a {string}', (place) => {
   cy.log(place);
   placeCoordinates.clearPlaceName();
