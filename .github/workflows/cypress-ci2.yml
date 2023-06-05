@@ -12,10 +12,6 @@ jobs:
       - name: Node
         uses: actions/setup-node@v3
 
-      - name: Install dependencies
-        run: npm install
-        working-directory: cypress
-
       - name: Cypress install
         uses: cypress-io/github-action@v5
         with:
@@ -27,7 +23,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build
-          if-no-files-found: error
           path: build
 
   cypress-run:
