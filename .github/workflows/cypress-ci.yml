@@ -2,10 +2,9 @@ name: Cypress-CI Pipeline
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
-on:
-  push:
-    paths:
-      - 'cypress/**'
+on: push
+#    paths:
+#      - 'cypress/**'
 
 jobs:
   # This workflow contains a single job called "greet"
