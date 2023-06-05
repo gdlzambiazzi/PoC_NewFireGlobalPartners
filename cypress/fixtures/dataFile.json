@@ -1,0 +1,12 @@
+{
+  "City_1": {
+    "lat": "-25.480877",
+    "long": "-49.304424",
+    "cityName": "Curitiba"
+  },
+  "City_2": {
+    "lat": "40.712776",
+    "long": "-74.005974",
+    "cityName": "New York"
+  }
+}

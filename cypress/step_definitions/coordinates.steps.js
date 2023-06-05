@@ -27,3 +27,15 @@ Before({ tags: '@clearSession' }, () => {
 After({ tags: '@after' }, () => {
   cy.visit('https://www.latlong.net/user/logout');
 });
+
+Given('I click on {string}', (link) => {
+  placeCoordinates.clickLink(link);
+});
+
+When('I look for a {string} latitude and longitude using a data file', (city) => {
+  placeCoordinates.fillLatLongFromFile(city);
+});
+
+Then('the city returned onscreen is the same {string} from the data file', (city) => {
+  placeCoordinates.compareCityData(city);
+});
