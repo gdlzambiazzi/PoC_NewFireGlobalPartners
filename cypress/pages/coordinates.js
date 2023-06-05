@@ -6,7 +6,7 @@ const elements = {
 		placeNameInput: '[id="place"]'
 	},
 	text: {
-		coordinatesData: '[class="coordinatetxt"]'
+		coordinatesData: '[id="latlngspan"]'
 	},
   anchors:{
 		latLongTitle: '[title="Lat Long Finder"]'

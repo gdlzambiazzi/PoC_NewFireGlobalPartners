@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  install:
     runs-on: ubuntu-22.04
     defaults:
        run:
@@ -18,21 +18,47 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+
+    - name: Checkout
+      - uses: actions/checkout@v3
+#    - name: Node
+#      - uses: actions/setup-node@v3
+#        with:
+#          node-version: ${{ matrix.node-version }}
+#          cache: 'npm'
+    
+    - name: Cypress Install
+    - uses: cypress-io/github-action@v5
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-#        cache-dependency-path: './package-lock.json'
-#    - uses: actions/setup-node@v3
-#      with:
-#        node-version: ${{ matrix.node-version }}
-#        cache: 'npm'
-#        cache-dependency-path: './cypress/package-lock.json'
+        runTests: false
+        build: npm run build
+
+    - name: Save build folder
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        if-no-files-found: error
+        path: build
+
     - name: Install dependencies
       run: npm install
       working-directory: cypress
 
-    - name: Run Cypress
-      run: npm run cr
-      working-directory: cypress
+  cypress-run:
+  runs-on: ubuntu-22.04
+  needs: install
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Download the build folder
+      uses: actions/download-artifact@v3
+      with:
+        name: build
+        path: build
+
+    - name: Cypress run
+      uses: cypress-io/github-action@v5
+      with:
+        start: npm start
+        browser: chrome
