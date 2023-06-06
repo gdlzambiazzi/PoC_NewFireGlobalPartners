@@ -1,5 +1,5 @@
 # PoC_NewFireGlobalPartners
-1. Cucumber/Gherkin syntax (human-language / user friendly) is used to describe the tests on the cypress/integration/.feature files
+1. Cucumber/Gherkin syntax (user friendly, human-language) is used to describe the tests on the cypress/integration/.feature files
 2. The cucumber syntax is described under /cypress/step_definitions/.steps
 3. The .steps files call the /pages files, which use the **Page Objects** pattern
 4. Page Objects files list all the elements, selectors and functions from a specific page. They're easier to maintain and to increment
