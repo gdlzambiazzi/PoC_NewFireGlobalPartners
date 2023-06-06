@@ -37,3 +37,5 @@ I've implemented a simple pipeline (under *Actions*), where it checks out the pr
 It is probably caused by the lack of resources on the pipeline. Also, the latlong.net website triggers *thousands* of XHR requests (trackers of all sorts), which causes the page performance to deteriorate.
 
 If desired, this repository can be cloned and run locally.
+
+There's also an issue with the *artifacts* configuration, so it's not working as desired.
