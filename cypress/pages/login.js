@@ -1,3 +1,5 @@
+import loginApi from "../support/api/loginApi.js"
+
 const elements = {
 	buttons:{
         loginBtn: 'button[title="Login"]'
@@ -37,5 +39,13 @@ export default class login {
   static assertLoggedIn(){
     cy.get('main')
       .contains('Welcome GZ Test');
+  }
+
+  static loginViaApi(){
+    cy.fixture('/userCredentials').then((user) => {
+      cy.log('::LOGIN FROM API AND FROM FIXTURE');
+      login.visitLatLong();
+      cy.request(loginApi(user.username,user.password));
+    })
   }
 }
