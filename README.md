@@ -22,7 +22,7 @@
 6. Note: the above scenario uses a table (City_1, City_2), which is then used in the dataFile to identify the correct city from the file (this is a little complicated, but it's only to show how to use data tables and data files :) )
 
 ## apiTests.feature
-1. This test cases shows how to use gherkin syntax and page objects for API tests
+1. This test cases shows how to use gherkin syntax and page objects for API tests (on **demoqa** (Book Store))
 2. It shows a few simple examples of assertions that can be made on an API (status code = 200, book names)
 3. Those tests are using the request implemented under /cypress/support/api/getAllBooks.js
 
