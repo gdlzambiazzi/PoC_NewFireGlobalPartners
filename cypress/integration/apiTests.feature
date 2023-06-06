@@ -1,6 +1,6 @@
 Feature: API tests on demoqa (Book Store)
 
-  Scenario: Login to Book store via API, assert logged in successfully
+  Scenario: Execute getAllBooks, asserts status code and book  names
     Given I execute getAllBooks API
     Then I can see all the books
     And getAllBooks API returned status 200
